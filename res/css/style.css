@@ -11,6 +11,7 @@
     background-position-x: center;
     background-repeat: no-repeat;
     height: 100vh;
+   
 
 }
 
@@ -20,7 +21,6 @@
     border-radius: 20px;
     height: 100px;
     width: 250px;
-    cursor: pointer;
     border: none;
     font-size: 70px;
     text-align: center;
@@ -54,7 +54,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-    cursor: pointer;
 }
 
 #point:hover{
@@ -72,3 +71,5 @@
     position: relative;
     top: 250px;
 }
+
+
