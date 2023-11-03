@@ -1,0 +1,74 @@
+*{
+    user-select: none;
+    font-family: sans-serif;
+    transition: 300ms ease-in-out;
+}
+    html, body{
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, #120f1a, #1a1624, #221c2e, #2c2138, #362742);
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+#startButton{
+    outline: 2px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    height: 100px;
+    width: 250px;
+    cursor: pointer;
+    border: none;
+    font-size: 70px;
+    text-align: center;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+
+}
+
+#startButton:hover{
+    outline-offset: 15px;
+    outline: 2px solid #750aa2;
+    background-color: rgb(117, 10, 162);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 170px 36px rgba(116,10,162,0.9);
+    -webkit-text-stroke-color: rgb(68, 8, 94);
+    transform: scale(1.1);
+
+}
+
+#point{
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(100, 12, 100, 0);
+    border: 5px solid rgb(110, 12, 110);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+#point:hover{
+    transform: scale(1.1);
+}
+#point:hover i{
+    transform: scale(2);
+}
+
+.startButtonContainer{
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 250px;
+}
