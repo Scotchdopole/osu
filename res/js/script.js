@@ -1,42 +1,61 @@
 
+const point = document.getElementById("point");
+const startButton = document.getElementById("startButton");
+const score = document.getElementById("score");
+const showTime = document.getElementById("showTime");
+const timerContainer = document.getElementById("timerContainer");
 
-// function play(song, artist) {
-//     console.log(`Playing: ${song} by ${artist}`)
-// }
-
-// const playMusic = (song, artist) => {
-//     console.log(`Playing: ${song} by ${artist}`)
-// }
-
-// play("Never gona give you up", "Rick Astley");
-// playMusic("HAFO", "Frank Wild")
-
-// function sum(a, b){
-//     return a + b;
-// }
-
-// let resultA = sum(5, 4);
-// let resultB = sum(7, 4);
-// let result = sum(resultA, resultB);
-// console.log(result);
+let gameInterval;
+let gameIntervalSpeed = 1000;7
+let gameStart;
 
 
+startButton.onclick = () => {
+  startButton.style.display = "none";
+  point.style.opacity = "100";
+  timerContainer.style.opacity = "100";
 
-// const ssum = (a, b) => a + b;
+  setPointOnclick(point);
+  setGameInterval(point);
+  gameStart = performance.now();
+}
+
+const moveElement = (element, x, y) => {
+    element.style.top = y + "px";
+    element.style.left = x + "px";
+}
 
 
-// let rresultA = sum(5, 4);
-// let rresultB = sum(7, 4);
-// let rresult = sum(rresultA, rresultB);
-// console.log(rresult);
+const setPointOnclick = (element) => {
+    element.onclick = () => {
+        let gameEnd = performance.now();
+        let time = gameEnd - gameStart;
+        showTime.innerText = `Time: ${time}ms`
+        gameStart = gameEnd;
+        score.innerText++;
+        if(gameIntervalSpeed > 400){
+        gameIntervalSpeed -= 10;
+        setGameInterval(element)
+        }
+        moveElement(element, randomNumber(0, window.innerWidth - 80), randomNumber(0, window.innerHeight - 80));
+    }
+}
+
+const randomNumber = (minimum, maximum) => Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 
 
-new kursor({
-    type: 4
-})
+const setGameInterval = (element) => {
+  clearInterval(gameInterval);
+  gameInterval = setInterval(() => {
+    moveElement(element, randomNumber(0, window.innerWidth - 80), randomNumber(0, window.innerHeight - 80));
+  },gameIntervalSpeed)   
+}
 
-new Kursor({
-    removeDefaultCursor: true
-  })
+
+
+
+
+
+
   
 
