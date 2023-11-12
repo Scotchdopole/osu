@@ -30,6 +30,7 @@ const setPointOnclick = (element) => {
     element.onclick = () => {
         let gameEnd = performance.now();
         let time = gameEnd - gameStart;
+        Math.round(time);
         showTime.innerText = `Time: ${time}ms`
         gameStart = gameEnd;
         score.innerText++;
